@@ -14,11 +14,13 @@ def ConvertidorMp4():
     if request.method == 'POST':
         video = pafy.new(request.form['url'])
         title = video.title
+        streams = video.streams
         best = video.getbest(preftype='mp4')
         best.download()
-        return render_template('convertidor.html', title=title)
-    
+        return render_template('convertidor.html', title=title, streams=streams)
 
 
+
+       
 if __name__ == '__main__':
     app.run(debug=True)

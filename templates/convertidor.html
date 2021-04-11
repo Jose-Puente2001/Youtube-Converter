@@ -4,4 +4,8 @@
 
 <h2>Video Convertido exitosamente</h2>
 <p>se convirtio: {{ title }} </p>
+{% for video in streams %}
+<p>En formato convertido fue: {{ video.resolution, video.extension }}</p>
+{% endfor %}
+
 {% endblock %}
