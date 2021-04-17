@@ -4,6 +4,7 @@ import pafy
 app = Flask(__name__)
 
 
+
 @app.route('/')
 def index():
 	return render_template('index.html')
@@ -14,13 +15,14 @@ def ConvertidorMp4():
     if request.method == 'POST':
         video = pafy.new(request.form['url'])
         title = video.title
-        streams = video.streams
+        imagen = video.thumb
         best = video.getbest(preftype='mp4')
         best.download()
-        return render_template('convertidor.html', title=title, streams=streams)
+        return render_template('convertidor.html', title=title, imagen=imagen)
+         
+          
 
-
-
+ 
        
 if __name__ == '__main__':
     app.run(debug=True)
