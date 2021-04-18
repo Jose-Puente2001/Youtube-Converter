@@ -2,10 +2,14 @@
 
 {% block content %}
 
+<div class="row">
+<div class="col">
 <form action="/convertidormp4" method="POST">
-   <h1>Youtube a mp4</h1>
-   	<input type="url" name="url" placeholder="url del video a convertir">
-   <input type="submit" name="value">
+   <h1>Youtube Converter</h1>
+   <p>Youtube Converter es uno de los convertidores de youtube más fáciles para descargar videos      de youtube a mp4.</p>
+   	<input id="input" type="url"  name="url" placeholder="url del video a convertir">
+   <input id= "button" type="submit" class="btn btn-danger" name="convertir">
  </form>
-
+</div>
+</div>
  {% endblock %}
